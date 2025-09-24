@@ -1,6 +1,8 @@
 import { useState } from "react";
 import API from "../api/api";
 import { useNavigate } from "react-router-dom";
+import Navbar from "../components/Navbar";
+import "../styles/Login.css";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -25,16 +27,25 @@ function Login() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h1>Login</h1>
-      <input placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
-      <input
-        type="password"
-        placeholder="Password"
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button type="submit">Login</button>
-    </form>
+    <>
+      <Navbar />
+      <div className="login-container">
+        <form onSubmit={handleSubmit}>
+          <h1>Login</h1>
+          <div>
+          <input placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
+          </div>
+          <div>
+            <input
+              type="password"
+              placeholder="Password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <button type="submit">Login</button>
+        </form>
+      </div>
+    </>
   );
 }
 

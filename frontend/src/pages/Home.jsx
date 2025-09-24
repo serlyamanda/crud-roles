@@ -1,8 +1,7 @@
 import Navbar from '../components/Navbar';
 import '../styles/Home.css';
-import Footer from '../components/Footer';
 import homeSection from '../data/HomeSection';
-import dashboardSection from '../data/DashboardSection';
+// import dashboardSection from '../data/DashboardSection';
 
 import parse from 'html-react-parser';
 
@@ -18,16 +17,6 @@ function Home() {
             {parse(homeSection.content)}
         </div>
     </section>
-
-    {/* dashboard section */}
-    <section id="dashboard">
-        <div className="dashboard-container">
-            {parse(dashboardSection.content)}
-        </div>
-    </section>
-    <Footer />
-
-
     </>
 
   )
